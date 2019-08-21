@@ -1,0 +1,57 @@
+header  {
+}
+
+footer  {
+}
+
+body {
+}
+
+.job-main {
+	/* padding: 10px 0px 0px 0px; */
+}
+
+.job-title-main {
+	padding: 4px;
+	font-weight: bold;
+	background-color: #b8c6d2;
+	
+}
+
+.job-title-main a {
+	/*font-color:*/ 
+}
+
+.job-title-main a:link {
+	/*color: #2b34ab;*/
+} /* - a normal, unvisited link */
+
+.job-title-main a:visited {
+	/*color: #5b5e88;*/
+} /* - a link the user has visited */
+
+.job-title-main a:hover {
+	/* color: #5a0e0e; */
+} /* - a link when the user mouses over it */
+
+.job-title-main a:active {
+/*	color: red;*/
+} /* - a link the moment it is clicked */
+
+#task-list-sortable { 
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0; 
+	/* width: 60%;  */
+
+}
+#task-list-sortable li { 
+	margin: 0 3px 3px 3px; 
+	padding: 0.4em; 
+	padding-left: 1.5em; 
+	font-size: 1em; 
+	/* height: 18px; */ 
+}
+#task-list-sortable li span { 
+	position: absolute; 
+	margin-left: -1.3em; }
