@@ -55,9 +55,9 @@
     if (in_array($action, $controllers[$controller])) {
       call($controller, $action);
     } else {
-      call('pages', 'error', 'Controller "'.$controller.'" found, but action "'.$action.'" not found');
+      call('pages', 'error', 'Controller <strong>'.$controller.'</strong> found, but action <strong>'.$action.'</strong> not found');
     }
   } else {
-    call('pages', 'error','Controller"'.$controller.'" not found');
+    call('pages', 'error','Controller <strong>'.$controller.'</strong> was not found');
   }
 ?>
