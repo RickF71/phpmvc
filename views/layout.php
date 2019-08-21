@@ -1,7 +1,5 @@
-<?php
-
-
-?><!DOCTYPE html>
+<?php $current_user = PMLogin::getInstance(); ?>
+<!DOCTYPE html>
 <html>
   <head>
 	<title>PHP MVC Template <?php 
@@ -19,11 +17,19 @@
 	
   </head>
   <body>
+
+			<div class="row justify-content-end" style="background-color:#aaa;">
+				<div class="col-4 text-right">
+					<a class="nav-link" href="?controller=users&action=login">Log In</a>
+				</div>
+			</div>
+
     <div class="jumbotron">
 			<h2 class="">PHP MVC Template</h2>
   	  <a class="btn btn-primary" href='./'>Home</a>
 			<a class="btn btn-primary" href='?controller=pages&action=about'>About</a>
     </div>
+
 
 		<div class="container">
 			<?php require_once('routes.php'); ?>

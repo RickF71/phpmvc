@@ -4,35 +4,22 @@
     require_once('controllers/' . $controller . '_controller.php');
 
     // create a new instance of the needed controller
+		// for "phpmvc" purposes all of these except PagesController
+		// are examples
     switch($controller) {
       case 'pages':
         $controller = new PagesController();
 				break;
+			case 'users': // everything to do with logins
+        require_once('models/user.php');
+        $controller = new UsersController();
+      break;
 			case 'companies':
 				// model will query db later in the controller
 				require_once('models/company.php');
 				require_once('models/job.php');
 				$controller = new CompaniesController();
 				break;
-			case 'jobs':
-				// model will query db later in the job
-				require_once('models/job.php');
-				// jobs needs the tasks also
-				require_once('models/task.php');
-				$controller = new JobsController();
-				break;
-			case 'skills':
-				require_once('models/skill.php');
-				$controller = new SkillsController();
-				break;
-			case 'jobskills':
-				require_once('models/jobskill.php');
-				$controller = new JobskillsController();
-				break;
-			case 'tasks':
-				require_once('models/task.php');
-				require_once('models/job.php');
-				$controller = new TasksController();
 			break;
     } // end switch
 
@@ -44,10 +31,7 @@
   // we consider those "allowed" values
   $controllers = array('pages' => ['home', 'error'],
 					'companies' => ['index', 'show'],
-					'jobs' => ['index', 'show', 'create', 'submitnew','edit','submit'],
-					'skills' => ['index', 'show'],
-					'jobskills' => ['index', 'show'],
-					'tasks' => ['find','createtask','savesort']);
+					'users' => ['index', 'login', 'logout', 'edit']);
 
   // check that the requested controller and action are both allowed
   // if someone tries to access something else he will be redirected to the error action of the pages controller
